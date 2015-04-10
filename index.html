@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html ng-app="TicTacToe">
+<head>
+	<title>TicTacToe</title>
+
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+<!--Sourcing Angular-->
+ <script type="text/javascript" charset="utf-8" src="js/angular.min.js"></script>
+
+<!-- Firebase -->
+<script src="js/firebase.js"></script>
+
+<!-- AngularFire -->
+<script src="js/angularfire.js"></script>
+
+<!-- Source in module -->
+ <script type="text/javascript" charset="utf-8"src="js/main.js"></script>
+
+<!-- Source in controller -->
+ <script type="text/javascript" charset="utf-8"src="js/TicTacController2.js"></script>
+
+</head>
+<body ng-controller="sqController as mainCtrl">
+<div class="bubbles" id="bubbles">
+<div id="message" class="spiritText fadeDuration0">Welcome, stranger. Care for a game of Tic Tac Toe?</div>
+<div id="score" class="spiritText fadeDuration2">The score is {{mainCtrl.game.board.players[0].wins}} to {{mainCtrl.game.board.players[1].wins}}.</div>
+
+    <div id="winner" class="spiritText fade-in fadeDuration1">{{mainCtrl.game.board.winner.winner}}</div>
+    <div id="ticTacContainer">
+    	<div class="ticTacSquare fadeDuration3" ng-click="mainCtrl.doBoth($index)" ng-repeat="box in mainCtrl.game.board.squares">{{box.value}}</div>
+    </div>
+
+    <div ng-click="mainCtrl.resetGame()" class="button spiritText fadeDuration2">Continue?</div>
+</div>
+
+<!--  JQuery -->
+  <script src='http://codepen.io/assets/libs/fullpage/jquery.js'></script>
+
+<!--  spirits -->
+ <script src="js/index.js"></script>
+ <audio autoplay preload="auto">
+      <source src="forestq.mp3" type="audio/ogg">
+ </audio>
+</body>
+ <!-- Source in sprites -->
+
+
+
+</html>
